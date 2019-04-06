@@ -58,28 +58,44 @@
               <!--<p class="description text-center">Or Be Classical</p>-->
               <div class="card-body">
                 <div class="form-group">
-                    <label>Email</label>
+                    <label for="email">Email</label>
                     <input type="email" class="form-control" name="email"/>
                 </div>
                 <div class="form-group">
-                    <label>Name (full name)</label>
+                    <label for="fullname">Name (full name)</label>
                     <input type="text" class="form-control" name="fullname"/>
                 </div>
                 <div class="form-group">
-                    <label>Password</label>
+                    <label for="password">Password</label>
                     <input type="password" class="form-control" id="password" name="password" />
                 </div>
                 <div class="form-group">
-                    <label>Password Confirm:</label>
+                    <label for="confirm_password">Password Confirm:</label>
                     <input type="password" class="form-control" id="confirm_password" name="confirm_password"  oninput="setCustomValidity('')"/>
                 </div>
+
                 <div class="form-group">
-                    <label>Select your function</label>
-                    <select class="form-control" name="user_role">
-                        <option value="student">Student</option>
-                        <option value="teacher">Teacher</option>
-                    </select>
+                    <label for="user_role">Select your function</label>
+                    <div class="form-check form-check-radio">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="user_role" id="student" value="student" >
+                            Student
+                            <span class="circle">
+                                <span class="check"></span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="form-check form-check-radio">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="user_role" id="teacher" value="teacher" checked>
+                            Teacher
+                            <span class="circle">
+                                <span class="check"></span>
+                            </span>
+                        </label>
+                    </div>
                 </div>
+
                 <div class="form-group"> 
                     <input type="checkbox" value="" required/> 
                         I agree <a href="javascript:void(0);" class="text-danger">Terms&Services</a>.

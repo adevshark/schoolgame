@@ -45,12 +45,12 @@
 | the active record class
 */
 
-$active_group = 'prod';
+$active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = '198.18.0.72';
-$db['default']['username'] = 'schoolgame';
-$db['default']['password'] = '123';
+$db['default']['hostname'] = 'localhost';
+$db['default']['username'] = 'root';
+$db['default']['password'] = 'root';
 $db['default']['database'] = 'schoolgame';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
