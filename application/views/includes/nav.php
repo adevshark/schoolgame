@@ -17,16 +17,19 @@
             <i class="material-icons">home</i> Home
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)" onclick="scrollToDownload()">
-            <i class="fa fa-gamepad"></i> Play Game
-          </a>
-        </li>
+        <?php if(empty($this->session->userdata['id'])):?>
         <li class="nav-item">
           <a class="nav-link" href="<?php echo site_url('/login'); ?>" onclick="scrollToDownload()">
             <i class="fa fa-sign-in"></i> Login
           </a>
         </li>
+        <?php else:?>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo site_url('/users/dashboard'); ?>" onclick="scrollToDownload()">
+            <i class="material-icons">dashboard</i> Dashboard (<?=$this->session->userdata['email']?>)
+          </a>
+        </li>
+        <?php endif;?>
       </ul>
     </div>
   </div>

@@ -1,0 +1,6 @@
+[19-Jan-2019 06:52:52 America/Chicago] PHP Fatal error:  Class 'MY_Controller' not found in /home2/wenalway/public_html/cucircle/cocos/application/controllers/welcome.php on line 3
+[19-Jan-2019 06:53:13 America/Chicago] PHP Fatal error:  Class 'MY_Controller' not found in /home2/wenalway/public_html/cucircle/cocos/application/controllers/welcome.php on line 3
+[19-Jan-2019 13:18:55 America/Chicago] PHP Fatal error:  Class 'MY_Controller' not found in /home2/wenalway/public_html/cucircle/cocos/application/controllers/welcome.php on line 3
+[19-Jan-2019 13:20:18 America/Chicago] PHP Fatal error:  Class 'MY_Controller' not found in /home2/wenalway/public_html/cucircle/cocos/application/controllers/login.php on line 3
+[19-Jan-2019 13:23:58 America/Chicago] PHP Fatal error:  Class 'MY_Controller' not found in /home2/wenalway/public_html/cucircle/cocos/application/controllers/users.php on line 9
+[19-Jan-2019 13:28:05 America/Chicago] PHP Fatal error:  Class 'My_Controller' not found in /home2/wenalway/public_html/cucircle/cocos/application/controllers/welcome.php on line 3

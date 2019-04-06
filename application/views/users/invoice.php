@@ -1,58 +1,60 @@
 <div class="container">
+    <a class="btn btn-default" href="javascript:history.go(-1);"><i class="fa fa-arrow-circle-o-left"></i>&nbsp;Back</a>
     <div class="row">
-        <div class="col-xs-12">
-            <div class="text-center">
-                <i class="fa fa-search-plus pull-left icon"></i>
-                <h2>Invoice for purchase #33221 <span class="label label-default">PAID</span></h2> 
-            </div>
-            <hr>
+        <div class="col-md-6">
             <div class="row">
-                <div class="col-xs-12 col-md-6">
-                    <div class="panel panel-default height">
-                        <div class="panel-heading">Billing Details</div>
-                        <div class="panel-body">
-                            <strong>David Peere:</strong><br>
-                            1111 Army Navy Drive<br>
-                            Arlington<br>
-                            VA<br>
-                            <strong>22 203</strong><br>
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-text card-header-primary">
+                            <div class="card-text">
+                            <h4 class="card-title">Billing Details</h4>
+                            </div>
+                        </div>
+                        <div class="card-body" style="min-height:450px;">
+                            <div class="text-center">
+                                <i class="fa fa-search-plus pull-left icon"></i>
+                                <h2>Invoice for purchase #<?=$invoice_detail['id']?></h2> 
+                                <?php 
+                                    $cls = "badge-default";
+                                    if ($invoice_detail['status'] == 'paid')
+                                        $cls="badge-success";
+                                    if ($invoice_detail['status'] == 'pending')
+                                        $cls="badge-danger";
+                                ?>
+                                <p  style="font-weight:bold; font-size:24px;" class="badge <?=$cls?>">
+                                    <?=strtoupper($invoice_detail['status'])?>
+                                </p>
+                            </div>
+
+                            <h1 class="text-center text-warning">$ <?=$invoice_detail['price']?></h1>
+                            <h3 class="text-center text-default"><?=$invoice_detail['qty']?> license(s)</h3>    
+
+                            <strong><?=$invoice_detail['fullname']?></strong><br>
+                            <?=$invoice_detail['email']?><br>
+                            <strong><?=$invoice_detail['due_date']?></strong><br>
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-md-6">
-                <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="text-center"><strong>Order summary</strong></h3>
-                </div>
-                <div class="panel-body">
-                    <div class="table-responsive">
-                        <table class="table table-condensed">
-                            <thead>
-                                <tr>
-                                    <td><strong>Licence 10 Keys</strong></td>
-                                    <td class="text-center"><strong>Item Price</strong></td>
-                                    <td class="text-center"><strong>Item Quantity</strong></td>
-                                    <td class="text-right"><strong>Total</strong></td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>10 Sets</td>
-                                    <td class="text-center">$900</td>
-                                    <td class="text-center">1</td>
-                                    <td class="text-right">$900</td>
-                                </tr>
-                                <tr>
-                                    <td class="highrow"><i class="fa fa-barcode iconbig"></i></td>
-                                    <td class="highrow"></td>
-                                    <td class="highrow text-center"><strong>Total</strong></td>
-                                    <td class="highrow text-right">$900.00</td>
-                                </tr>
-                            </tbody>
-                        </table>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header card-header-text card-header-success">
+                    <div class="card-text">
+                    <h4 class="card-title">Licenses</h4>
                     </div>
                 </div>
-            </div>
+                <div class="card-body" style="min-height:450px;">
+                    <?php if ($invoice_detail['status']!='paid'):?>
+                        <h2 class="text-danger text-center">To obtain a license,<br/> it must be paid!</h2>
+                    <?php else:?>
+                        <?php
+                        foreach( $licenses as $key=> $license) {
+                            echo "<h4>".$license['key']."</h4>";
+                        }
+                        ?>
+                    <?php endif;?>
                 </div>
             </div>
         </div>

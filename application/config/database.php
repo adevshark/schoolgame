@@ -45,10 +45,10 @@
 | the active record class
 */
 
-$active_group = 'default';
+$active_group = 'prod';
 $active_record = TRUE;
 
-$db['default']['hostname'] = '192.168.1.105';
+$db['default']['hostname'] = '198.18.0.72';
 $db['default']['username'] = 'schoolgame';
 $db['default']['password'] = '123';
 $db['default']['database'] = 'schoolgame';
@@ -63,6 +63,22 @@ $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
+
+$db['prod']['hostname'] = 'localhost';
+$db['prod']['username'] = 'wenalway_cocos';
+$db['prod']['password'] = 'Alondra32!';
+$db['prod']['database'] = 'wenalway_cocos';
+$db['prod']['dbdriver'] = 'mysqli';
+$db['prod']['dbprefix'] = '';
+$db['prod']['pconnect'] = TRUE;
+$db['prod']['db_debug'] = TRUE;
+$db['prod']['cache_on'] = FALSE;
+$db['prod']['cachedir'] = '';
+$db['prod']['char_set'] = 'utf8';
+$db['prod']['dbcollat'] = 'utf8_general_ci';
+$db['prod']['swap_pre'] = '';
+$db['prod']['autoinit'] = TRUE;
+$db['prod']['stricton'] = FALSE;
 
 
 /* End of file database.php */

@@ -36,7 +36,7 @@
       <div class="row">
         <div class="col-lg-4 col-md-6 ml-auto mr-auto">
           <div class="card">
-            <form class="form" action="" method="post">
+            <form class="form" action="" method="post" onsubmit="return checkFinal();">
                 <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
 
               <div class="card-header card-header-success text-center">
@@ -58,44 +58,36 @@
               <!--<p class="description text-center">Or Be Classical</p>-->
               <div class="card-body">
                 <div class="form-group">
-                    <label>Username</label>
-                    <input type="text" class="form-control" name="username"/>
-                </div>
-                <div class="form-group">
                     <label>Email</label>
                     <input type="email" class="form-control" name="email"/>
                 </div>
                 <div class="form-group">
-                    <label>Full Name</label>
+                    <label>Name (full name)</label>
                     <input type="text" class="form-control" name="fullname"/>
                 </div>
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" class="form-control" name="password" />
+                    <input type="password" class="form-control" id="password" name="password" />
+                </div>
+                <div class="form-group">
+                    <label>Password Confirm:</label>
+                    <input type="password" class="form-control" id="confirm_password" name="confirm_password"  oninput="setCustomValidity('')"/>
                 </div>
                 <div class="form-group">
                     <label>Select your function</label>
-                    <select class="form-control" name="function">
-                        <option value="0">Student</option>
-                        <option value="1">Teacher</option>
+                    <select class="form-control" name="user_role">
+                        <option value="student">Student</option>
+                        <option value="teacher">Teacher</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <div class="form-check">
-                    <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" value=""> 
-                        <span class="form-check-sign">
-                            <span class="check"></span>
-                        </span>
-                        
+                <div class="form-group"> 
+                    <input type="checkbox" value="" required/> 
                         I agree <a href="javascript:void(0);" class="text-danger">Terms&Services</a>.
-                    </label>
-                </div>
                 </div>
                 <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary"> Register </button>
-                    <a href="<?php echo base_url().'Login'?>" class="btn btn-danger">Cancel</a>
+                    <a href="<?php echo base_url().'login'?>" class="btn btn-danger">Cancel</a>
                 </div>                
               </div>
             </form>
@@ -106,6 +98,7 @@
     <footer class="footer">
     </footer>
   </div>
+
   <!--   Core JS Files   -->
   <script src="<?php echo base_url('/assets/js/core/jquery.min.js'); ?>" type="text/javascript"></script>
   <script src="<?php echo base_url('/assets/js/core/popper.min.js'); ?>" type="text/javascript"></script>
@@ -120,6 +113,14 @@
   <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
   <script src="<?php echo base_url('/assets/js/material-kit.js?v=2.0.5'); ?>" type="text/javascript"></script>
 </body>
-
 </html>
-
+<script type="text/javascript">
+function checkFinal() {
+    if( $("#password").val()!=$("#confirm_password").val() ) {
+      $("#confirm_password")[0].setCustomValidity("Confirm password does not matche!");
+      $("#confirm_password")[0].reportValidity();
+      return false;
+    }
+    return true;
+}
+</script>

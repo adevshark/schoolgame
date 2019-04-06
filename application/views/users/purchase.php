@@ -29,7 +29,7 @@
                             	<!--HEAD START-->
                                 <div class="head_bg"></div>
                                 <div class="head">
-                                    <span>Basic</span>
+                                    <span>Single</span>
                                 </div>
                                 <!--//HEAD END-->
                                 
@@ -40,9 +40,8 @@
                             <div class="generic_price_tag clearfix">	
                                 <span class="price">
                                     <span class="sign">$</span>
-                                    <span class="currency">99</span>
-                                    <span class="cent">.99</span>
-                                    <span class="month">/MON</span>
+                                    <span class="currency">5</span>
+                                    <span class="cent">.00</span>
                                 </span>
                             </div>
                             <!--//PRICE END-->
@@ -50,7 +49,7 @@
                         </div>                            
                         <!--//HEAD PRICE DETAIL END-->
                         
-                        <!--FEATURE LIST START-->
+                        <!--FEATURE LIST START--
                         <div class="generic_feature_list">
                         	<ul>
                             	<li><span>2GB</span> Bandwidth</li>
@@ -60,11 +59,11 @@
                                 <li><span>24/7</span> Support</li>
                             </ul>
                         </div>
-                        <!--//FEATURE LIST END-->
+                        --//FEATURE LIST END-->
                         
                         <!--BUTTON START-->
                         <div class="generic_price_btn clearfix">
-                        	<a class="" href="">Sign up</a>
+                        	<a class="" href="<?=site_url('users/purchase_plan/0')?>">Order</a>
                         </div>
                         <!--//BUTTON END-->
                         
@@ -87,7 +86,7 @@
                             	<!--HEAD START-->
                                 <div class="head_bg"></div>
                                 <div class="head">
-                                    <span>Standard</span>
+                                    <span>5 Licenses</span>
                                 </div>
                                 <!--//HEAD END-->
                                 
@@ -98,8 +97,8 @@
                             <div class="generic_price_tag clearfix">	
                                 <span class="price">
                                     <span class="sign">$</span>
-                                    <span class="currency">199</span>
-                                    <span class="cent">.99</span>
+                                    <span class="currency">20</span>
+                                    <span class="cent">.00</span>
                                     <span class="month">/MON</span>
                                 </span>
                             </div>
@@ -108,7 +107,7 @@
                         </div>                            
                         <!--//HEAD PRICE DETAIL END-->
                         
-                        <!--FEATURE LIST START-->
+                        <!--FEATURE LIST START--
                         <div class="generic_feature_list">
                         	<ul>
                             	<li><span>2GB</span> Bandwidth</li>
@@ -118,11 +117,11 @@
                                 <li><span>24/7</span> Support</li>
                             </ul>
                         </div>
-                        <!--//FEATURE LIST END-->
+                        --//FEATURE LIST END-->
                         
                         <!--BUTTON START-->
                         <div class="generic_price_btn clearfix">
-                        	<a class="" href="">Sign up</a>
+                        	<a class="" href="<?=site_url('users/purchase_plan/1')?>">Order</a>
                         </div>
                         <!--//BUTTON END-->
                         
@@ -144,7 +143,7 @@
                             	<!--HEAD START-->
                                 <div class="head_bg"></div>
                                 <div class="head">
-                                    <span>Unlimited</span>
+                                    <span>10 Licenses</span>
                                 </div>
                                 <!--//HEAD END-->
                                 
@@ -154,9 +153,9 @@
                             <!--PRICE START-->
                             <div class="generic_price_tag clearfix">	
                                 <span class="price">
-                                    <span class="sign">$</span>
-                                    <span class="currency">299</span>
-                                    <span class="cent">.99</span>
+                                    <span class="sign">$</span> 
+                                    <span class="currency">35</span>
+                                    <span class="cent">.00</span>
                                     <span class="month">/MON</span>
                                 </span>
                             </div>
@@ -165,7 +164,7 @@
                         </div>                            
                         <!--//HEAD PRICE DETAIL END-->
                         
-                        <!--FEATURE LIST START-->
+                        <!--FEATURE LIST START--
                         <div class="generic_feature_list">
                         	<ul>
                             	<li><span>2GB</span> Bandwidth</li>
@@ -175,11 +174,11 @@
                                 <li><span>24/7</span> Support</li>
                             </ul>
                         </div>
-                        <!--//FEATURE LIST END-->
+                        --//FEATURE LIST END-->
                         
                         <!--BUTTON START-->
                         <div class="generic_price_btn clearfix">
-                        	<a class="" href="">Sign up</a>
+                        	<a class="" href="<?=site_url('users/purchase_plan/2')?>">Order</a>
                         </div>
                         <!--//BUTTON END-->
                         
@@ -193,6 +192,5 @@
         </div>
     </section>             
 	<footer>
-    	<a class="bottom_btn" href="#">&copy; MrSahar</a>
     </footer>
 </div>

@@ -54,12 +54,16 @@ class Login_model extends CI_Model{
     {
         $data=$this->security->xss_clean($data);
         $user=array(
-            'username' => $data['username'],
             'email' => $data['email'],
             'password' => sha1(md5($data['password'])),
             'fullname' => $data['fullname'],
-            'hash' => sha1(md5($this->session->userdata['session_id']))
+            'hash' => sha1(md5($this->session->userdata['session_id'])),
+            'user_role' => 'student'
         );
+
+        if ($data['user_role'] == 'teacher') {
+            $user['user_role'] = 'teacher';
+        }
         $this->db->insert('users',$user);
         return $this->db->insert_id();
     }
@@ -79,5 +83,34 @@ class Login_model extends CI_Model{
         {
             return false;
         }
+    }
+
+    public function setRecoveryToken( $email ) {
+        $st=$this->db->SELECT('*')->from('users')
+                        ->where('email',$email)
+                        ->get()->result_array();
+        if (count($st)==0) {
+            return null;
+        }
+        $token = md5($email."_".rand(0,9999)."_".rand(0,9999));
+        $this->db->where('email', $email);
+        $this->db->update('users', array('forgot_token'=> $token, 'forgot_token_ts'=>time()) );
+        return $token;
+    }
+
+    public function recoverPasswordWithToken( $token , $password ) {
+        $st=$this->db->SELECT('*')->from('users')
+                        ->where('forgot_token',$token)
+                        ->get()->result_array();
+        if (count($st)==0) {
+            return "Token is invalid, token can be used only for 1 time."; 
+        }
+        if (  $st[0]['forgot_token_ts']+ 60*15 <time() ) {
+            return "Token time is expired! Please try again to recover password!";
+        }
+
+        $this->db->where('id', $st[0]['id'] );
+        $this->db->update('users', array('password'=> sha1(md5($password)), 'forgot_token'=>'', 'forgot_token_ts'=>0 ) );
+        return "OK";
     }
 }

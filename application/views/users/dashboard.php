@@ -7,14 +7,21 @@
                 </div>
             </div>
         <?php }?>
-        <div class="col-md-12 alert alert-success" style="padding-top:30px;;box-shadow: 5px 5px 5px grey;">
-            <h3>Welcome <?php echo $this->session->userdata['fullname']?>! to your Dashboard</h3>
-            <hr>
-            <div style="text-align: center">
-                <a href="<?php echo base_url().'login/change_password'?>" class="btn btn-link">Change Password</a> |
-                <a href="<?php echo base_url().'login/logout'?>" class="btn btn-link">Logout</a>
+        <div class="card">
+            <div class="card-header card-header-icon card-header-rose">
+                <h4>
+                    Welcome <b><?php echo $this->session->userdata['fullname']?></b>!
+                </h4>
             </div>
-
+            <div class="card-body">
+                <?php if ($this->session->userdata['user_role']=="teacher"):?>
+                <a href="<?=site_url('users/invoices')?>" class="btn btn-success btn-lg">Get Game Key</a>
+                <?php endif;?>
+                <div style="text-align: center">
+                    <a href="<?php echo base_url().'login/change_password'?>" class="btn btn-link">Change Password</a> |
+                    <a href="<?php echo base_url().'login/logout'?>" class="btn btn-link">Logout</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

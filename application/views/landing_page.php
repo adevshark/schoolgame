@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="<?php echo base_url('/assets/img/favicon.png'); ?>">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Material Kit by Creative Tim
+    School Game
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -31,7 +31,7 @@
           <h1 class="title">Play your school game!</h1>
           <h4>These games are good educational graphic games!</h4>
           <br>
-          <a href="/login"  class="btn btn-success btn-raised btn-lg">
+          <a href="<?=site_url('login')?>"  class="btn btn-success btn-raised btn-lg">
             <i class="fa fa-play"></i>&nbsp; Start Trial!
           </a>
         </div>
@@ -39,7 +39,7 @@
     </div>
   </div>
 
-
+  <!--
   <div class="main main-raised">
     <div class="container">
       <div class="section text-center">
@@ -156,6 +156,8 @@
       
     </div>
   </div>
+  -->
+      <!--
   <footer class="footer footer-default">
     <div class="container">
       <nav class="float-left">
@@ -191,6 +193,7 @@
       </div>
     </div>
   </footer>
+    -->
   <!--   Core JS Files   -->
   <script src="<?php echo base_url('/assets/js/core/jquery.min.js'); ?>" type="text/javascript"></script>
   <script src="<?php echo base_url('/assets/js/core/popper.min.js'); ?>" type="text/javascript"></script>

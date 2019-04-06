@@ -45,6 +45,7 @@
         </div>
       <div class="row">
         <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+          <!-- Begin: login card-->
           <div class="card card-login">
             <form class="form" action="" method="post">
                 <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
@@ -84,11 +85,13 @@
                   <input type="password" name="password" class="form-control" placeholder="Password...">
                 </div>
                 <div class="bmd-form-group text-center">
-                    <button type="submit" class="btn btn-primary btn-wd">Login</button> &nbsp;
+                    <button type="submit" class="btn btn-primary btn-wd">Login</button>
+                    <br/>
                     <a href="<?php echo site_url('/login/register'); ?>" class="btn btn-success btn-wd">Register</a>
                     <br/>
-                    <br/>
-                    <a href="#pablo" class="btn btn-info btn-link btn-wd">Forgot Password ?</a>
+                    <button type="button" class="btn btn-info btn-link btn-wd" onclick="$('.card-login').hide();$('.card-forgot').show();">
+                      Forgot Password ?
+                    </button>
                     <br/>
                 </div>
               </div>
@@ -96,6 +99,29 @@
               </div>
             </form>
           </div>
+          <!-- End: login card -->
+          <!-- Begin: forgot password card -->
+          <div class="card card-forgot" style="display:none">
+              <div class="card-header card-header-text card-header-warning">
+                <div class="card-text">
+                  <h4 class="card-title">Forgot Password Recovery</h4>
+                </div>
+              </div>
+              <div class="card-body">
+                <form class="form" action="<?=site_url('/login/forgot_password')?>" method="post">
+                  <div class="form-group">
+                    <input id="forgotemail" name="forgotemail" type="email" class="form-control" placeholder="Your email address" required/>
+                  </div>
+                  <div class="form-group">
+                    <button type="button" class="btn btn-default" onclick="$('.card-forgot').hide();$('.card-login').show();">
+                      <i class="fa fa-arrow-left"></i>&nbsp;&nbsp;Back
+                    </button>
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-send"></i>&nbsp;&nbsp;Send</button>
+                  </div>
+                </form>    
+              </div>
+          </div>
+          <!-- End: forgot password card -->
         </div>
       </div>
     </div>
@@ -116,6 +142,4 @@
   <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
   <script src="<?php echo base_url('/assets/js/material-kit.js?v=2.0.5'); ?>" type="text/javascript"></script>
 </body>
-
 </html>
-
